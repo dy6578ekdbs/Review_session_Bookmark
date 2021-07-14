@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장고 북마크t</title>
+</head>
+<body>
+    <div id="content">
+        <h1>My Bookmark List❤</h1>
+
+        <ul>
+            {% for bookmark in object_list %}
+            <li><a href="{% url 'detail' bookmark.id %}">{{bookmark}}</a></li> <!--{{bookmark}} 북마크 모델 테이블 레코드 하나를 의미, __str__()메소드 호출-->
+            {% endfor %}
+        </ul>
+    </div>
+    
+</body>
+</html>
